@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels | Safarnama</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo"> Safarnama</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="destinations">
+
+    <h2>Top Hotels & Resorts</h2>
+
+    <div class="destination-container">
+
+        <div class="card">
+            <img src="images/kerala-hotel.jpg" alt="Kerala Resort">
+            <h3>Kerala Backwater Resort</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>₹6,500 / Night</p>
+            <button onclick="bookHotel('Kerala Backwater Resort','₹6,500 / Night')">
+    Book Now
+</button>
+        </div>
+
+        <div class="card">
+            <img src="images/goa-hotel.jpg" alt="Goa Hotel">
+            <h3>Goa Beach Resort</h3>
+            <p>⭐⭐⭐⭐</p>
+            <p>₹5,200 / Night</p>
+            <button onclick="bookHotel('Goa Beach Resort','₹5,200 / Night')">
+    Book Now
+</button>
+        </div>
+
+        <div class="card">
+            <img src="images/ladakh-hotel.jpg" alt="Ladakh Hotel">
+            <h3>Leh Mountain Retreat</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>₹7,800 / Night</p>
+            <button onclick="bookHotel('Leh Mountain Retreat','₹7,800 / Night')">
+    Book Now
+</button>
+        </div>
+
+        <div class="card">
+            <img src="images/rajasthan-hotel.jpg" alt="Rajasthan Hotel">
+            <h3>Royal Palace Hotel</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>₹8,500 / Night</p>
+            <button onclick="bookHotel('Royal Palace Hotel','₹8,500 / Night')">
+    Book Now
+</button>
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+function bookHotel(hotel, price){
+
+    localStorage.setItem("bookingType", "Hotel");
+
+    localStorage.setItem("hotelName", hotel);
+
+    localStorage.setItem("hotelPrice", price);
+
+    window.location.href = "booking.html";
+
+}
+
+</script>
+
+</body>
+</html>

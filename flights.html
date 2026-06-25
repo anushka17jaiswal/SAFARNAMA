@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights | Safarnama</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo"> Safarnama</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="destinations">
+
+    <h2>Available Flights</h2>
+
+    <div class="destination-container">
+
+        <div class="card">
+    <img src="images/kerala-flight.jpg" alt="Kerala">
+    <h3>Delhi → Kerala</h3>
+    <p>IndiGo</p>
+    <p>08:30 AM - 11:45 AM</p>
+    <p><strong>₹6,999</strong></p>
+    <button onclick="bookFlight('Delhi to Kerala','₹6,999')">Book Now</button>
+</div>
+
+<div class="card">
+    <img src="images/goa-flight.jpg" alt="Goa">
+    <h3>Mumbai → Goa</h3>
+    <p>Air India</p>
+    <p>09:15 AM - 10:35 AM</p>
+    <p><strong>₹4,999</strong></p>
+    <button onclick="bookFlight('Mumbai to Goa','₹4,999')">Book Now</button>
+</div>
+
+<div class="card">
+    <img src="images/ladakh-flight.jpg" alt="Ladakh">
+    <h3>Delhi → Leh (Ladakh)</h3>
+    <p>SpiceJet</p>
+    <p>06:40 AM - 08:15 AM</p>
+    <p><strong>₹7,999</strong></p>
+    <button onclick="bookFlight('Delhi to Ladakh','₹7,999')">Book Now</button>
+</div>
+
+<div class="card">
+    <img src="images/rajasthan-flight.jpg" alt="Rajasthan">
+    <h3>Delhi → Jaipur</h3>
+    <p>Vistara</p>
+    <p>11:00 AM - 12:10 PM</p>
+    <p><strong>₹5,499</strong></p>
+    <button onclick="bookFlight('Delhi to Rajasthan','₹5,499')">Book Now</button>
+</div>
+</section>
+
+<script>
+
+function bookFlight(route, price){
+
+localStorage.setItem("bookingType", "Flight");
+    localStorage.setItem("flightRoute", route);
+    localStorage.setItem("flightPrice", price);
+
+    window.location.href="booking.html";
+
+}
+
+</script>
+
+</body>
+</html> 

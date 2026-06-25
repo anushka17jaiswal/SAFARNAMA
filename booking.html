@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip | Safarnama</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">✈️ Safarnama</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+
+    <h2>Complete Your Booking</h2>
+
+    <div class="feature" style="max-width:600px; margin:auto;">
+
+        <h3>Selected Flight</h3>
+
+        <p><strong>Route:</strong> <span id="route"></span></p>
+
+        <p><strong>Price:</strong> <span id="price"></span></p>
+
+        <br>
+
+        <form id="bookingForm">
+
+            <input type="text" id="name" placeholder="Full Name" required><br><br>
+
+            <input type="email" id="email" placeholder="Email Address" required><br><br>
+
+            <input type="tel" id="phone" placeholder="Mobile Number" required><br><br>
+
+            <button type="submit">Confirm Booking</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script>
+
+const bookingType = localStorage.getItem("bookingType");
+
+if (bookingType === "Hotel") {
+
+    document.getElementById("route").innerText =
+    localStorage.getItem("hotelName");
+
+    document.getElementById("price").innerText =
+    localStorage.getItem("hotelPrice");
+
+} else {
+
+    document.getElementById("route").innerText =
+    localStorage.getItem("flightRoute");
+
+    document.getElementById("price").innerText =
+    localStorage.getItem("flightPrice");
+
+}
+
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+
+localStorage.setItem("customerName",name);
+
+window.location.href="confirmation.html";
+
+});
+
+</script>
+
+</body>
+</html>

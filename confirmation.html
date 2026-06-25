@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed | Safarnama</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">Safarnama</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<section class="contact">
+
+    <div class="feature" style="max-width:650px;margin:auto;">
+
+        <h2>🎉 Booking Confirmed!</h2>
+
+        <br>
+
+        <p>Thank you for choosing <strong>Safarnama</strong>.</p>
+
+        <br>
+
+        <h3>Booking Details</h3>
+
+        <br>
+
+        <p><strong>Passenger:</strong> <span id="name"></span></p>
+
+        <p><strong>Route:</strong> <span id="route"></span></p>
+
+        <p><strong>Amount Paid:</strong> <span id="price"></span></p>
+
+        <p><strong>Booking ID:</strong> <span id="bookingId"></span></p>
+
+        <br>
+
+        <button onclick="window.location.href='index.html'">
+            Back to Home
+        </button>
+
+    </div>
+
+</section>
+
+<script>
+
+document.getElementById("name").innerText =
+localStorage.getItem("customerName");
+
+const bookingType = localStorage.getItem("bookingType");
+
+if (bookingType === "Hotel") {
+
+    document.getElementById("route").innerText =
+    localStorage.getItem("hotelName");
+
+    document.getElementById("price").innerText =
+    localStorage.getItem("hotelPrice");
+
+} else {
+
+    document.getElementById("route").innerText =
+    localStorage.getItem("flightRoute");
+
+    document.getElementById("price").innerText =
+    localStorage.getItem("flightPrice");
+
+}
+const bookingId =
+"SFR" + Math.floor(Math.random()*900000 + 100000);
+
+document.getElementById("bookingId").innerText = bookingId;
+
+</script>
+
+</body>
+</html>
