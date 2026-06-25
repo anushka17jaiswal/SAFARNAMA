@@ -4,7 +4,7 @@ Safarnama is a modern and responsive travel booking website built using **HTML, 
 
 ## 🌐 Live Demo
 
-🔗 **Website:** https://safarnama-blue.vercel.app/
+🔗 **Website:** https://safarnama-blue.vercel.app
 
 ## 📂 GitHub Repository
 
